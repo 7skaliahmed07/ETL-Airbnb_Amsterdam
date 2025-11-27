@@ -4,3 +4,5 @@ __pycache__/
 *.log
 venv/
 data/  # We'll add this folder later for raw data
+data/raw/*
+logs/*
