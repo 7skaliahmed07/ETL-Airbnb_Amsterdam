@@ -12,4 +12,10 @@ logs/*
 *.sqlite
 *.sqlite3
 .DS_Store
+data/*.db
+.DS_Store
+data/warehouse.db
+*.db
+.DS_Store
+data/warehouse.db
 data/
