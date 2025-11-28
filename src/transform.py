@@ -1,6 +1,7 @@
 import pandas as pd
 import logging
 from pathlib import Path
+import numpy as np
 
 logger = logging.getLogger("AirbnbETL.Transform")
 
@@ -30,4 +31,16 @@ def clean_listings(df: pd.DataFrame) -> pd.DataFrame:
             df[col] = pd.to_datetime(df[col], errors='coerce')
     
     logger.info("Listings transformation completed")
+    return df
+
+def clean_calendar(df: pd.DataFrame) -> pd.DataFrame:
+    logger.info(f"Cleaning calendar – {len(df):,} rows")
+    df['date'] = pd.to_datetime(df['date'], errors='coerce')
+    df['price'] = df['price'].replace('[\$,]', '', regex=True).astype(float)
+    df['available'] = df['available'].map({'t': True, 'f': False})
+    return df
+
+def clean_reviews(df: pd.DataFrame) -> pd.DataFrame:
+    logger.info(f"Cleaning reviews – {len(df):,} rows")
+    df['date'] = pd.to_datetime(df['date'], errors='coerce')
     return df
