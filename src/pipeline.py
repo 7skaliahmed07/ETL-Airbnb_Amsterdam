@@ -1,7 +1,7 @@
 import logging
 from pathlib import Path
 from extract import load_gz_csv
-from transform import clean_listings
+from transform import clean_listings, clean_calendar, clean_reviews
 from load import create_connection, load_to_sqlite
 
 # Master logging config (used by all modules)
@@ -24,12 +24,14 @@ def run_full_pipeline():
     
     # Transform
     listings_clean = clean_listings(listings_df)
+    calendar_clean = clean_calendar(calendar_df)
+    reviews_clean = clean_reviews(reviews_df)
     
     # Load
     conn = create_connection()
     load_to_sqlite(listings_clean, "listings", conn)
-    load_to_sqlite(calendar_df,   "calendar", conn)
-    load_to_sqlite(reviews_df,    "reviews",  conn)
+    load_to_sqlite(calendar_clean, "calendar", conn)
+    load_to_sqlite(reviews_clean, "reviews", conn)
     
     conn.close()
     logging.info("Pipeline completed successfully!")
