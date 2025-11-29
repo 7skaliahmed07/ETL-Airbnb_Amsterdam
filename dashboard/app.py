@@ -1,4 +1,16 @@
 import streamlit as st
+import tempfile
+import json
+import os
+
+# --- Load Google Cloud service account from Streamlit secrets ---
+sa_info = json.loads(st.secrets["SERVICE_ACCOUNT_JSON"])  # or st.secrets["SERVICE_ACCOUNT"]
+with tempfile.NamedTemporaryFile(mode="w", delete=False) as f:
+    json.dump(sa_info, f)
+    key_file = f.name
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key_file
+
+# --- Now the rest of your imports ---
 st.set_page_config(
     page_title="Amsterdam Airbnb Intelligence",
     page_icon="house",
@@ -11,7 +23,7 @@ import plotly.express as px
 import joblib
 from pages import home, explore, predict
 
-# Custom CSS – looks like a real product
+# Custom CSS
 st.markdown("""
 <style>
     .big-font {font-size:50px !important; font-weight:bold; color:#FF5A5F;}
