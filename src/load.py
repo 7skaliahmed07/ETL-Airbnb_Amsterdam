@@ -15,7 +15,7 @@ def load_to_sqlite(df: pd.DataFrame, table_name: str, conn: sqlite3.Connection):
     logger.info(f"Loading {len(df):,} rows into table '{table_name}'")
     df.to_sql(table_name, conn, if_exists='replace', index=False)
     
-    # Create indexes for common queries (exactly what companies do)
+    # Create indexes for common queries
     cursor = conn.cursor()
     if table_name == "listings":
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_neighbourhood ON listings(neighbourhood_cleansed)")

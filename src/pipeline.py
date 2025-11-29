@@ -17,17 +17,17 @@ logging.basicConfig(
 def run_full_pipeline():
     logging.info("Starting Airbnb Amsterdam ETL Pipeline")
     
-    # Extract
+    # Extracting the gz file to csv and then pandas
     listings_df = load_gz_csv("data/raw/listings.csv.gz")         
     calendar_df = load_gz_csv("data/raw/calendar.csv.gz")
     reviews_df  = load_gz_csv("data/raw/reviews.csv.gz")
     
-    # Transform
+    # Transform - Cleaning and modifying dataframe
     listings_clean = clean_listings(listings_df)
     calendar_clean = clean_calendar(calendar_df)
     reviews_clean = clean_reviews(reviews_df)
     
-    # Load
+    # Loading to sql-lite database
     conn = create_connection()
     load_to_sqlite(listings_clean, "listings", conn)
     load_to_sqlite(calendar_clean, "calendar", conn)
