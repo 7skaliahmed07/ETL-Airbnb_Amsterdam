@@ -3,11 +3,14 @@ import tempfile
 import json
 import os
 
-# --- Load Google Cloud service account from Streamlit secrets ---
-sa_info = json.loads(st.secrets["SERVICE_ACCOUNT_JSON"])  # or st.secrets["SERVICE_ACCOUNT"]
+# Load service account from Streamlit secrets
+sa_info = dict(st.secrets["SERVICE_ACCOUNT_JSON"])
+
+# Write to temporary file
 with tempfile.NamedTemporaryFile(mode="w", delete=False) as f:
     json.dump(sa_info, f)
     key_file = f.name
+
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = key_file
 
 # --- Now the rest of your imports ---
