@@ -1,6 +1,0 @@
-streamlit
-pandas-gbq
-google-cloud-bigquery
-scikit-learn
-joblib
-plotly
