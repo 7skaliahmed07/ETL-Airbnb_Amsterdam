@@ -8,7 +8,7 @@
 </div>
 
 ## Live Demo
-https://amsterdam-airbnb-intelligence.streamlit.app
+[https://amsterdam-airbnb-intelligence.streamlit.app](https://etl-airbnbamsterdam-etl-pipeline-by-uzair.streamlit.app/)
 
 ## Tech Stack (Exactly what Dutch companies in Netherlands use)
 - **Data Source**: Inside Airbnb (public)
