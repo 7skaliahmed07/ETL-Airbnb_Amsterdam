@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/yourusername/your-repo/main/dashboard/assets/architecture.png" width="100%">
+  <!-- <img src="https://raw.githubusercontent.com/yourusername/your-repo/main/dashboard/assets/architecture.png" width="100%"> -->
   <h1>Amsterdam Airbnb Intelligence Platform</h1>
   <p><b>End-to-end modern data stack • 10k+ listings • 3.8M rows • ML price prediction • Live dashboard</b></p>
 
