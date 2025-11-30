@@ -10,7 +10,7 @@
 ## Live Demo
 [https://amsterdam-airbnb-intelligence.streamlit.app](https://etl-airbnbamsterdam-etl-pipeline-by-uzair.streamlit.app/)
 
-## Tech Stack (Exactly what Dutch companies in Netherlands use)
+## Tech Stack
 - **Data Source**: Inside Airbnb (public)
 - **Storage**: Google BigQuery (EU region, free tier)
 - **ETL**: Python + Pandas + Logging + Modular code
