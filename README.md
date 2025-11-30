@@ -35,7 +35,7 @@ project/
 └── requirements.txt
 ```
 
-## Architecture (1 sentence)
+## Architecture 
 Raw Airbnb CSVs → Python ETL → Google BigQuery → Train ML model → Multi-page Streamlit dashboard with live predictions
 
 Made with love in 2025 | Ready for HSM-sponsored roles in Amsterdam
