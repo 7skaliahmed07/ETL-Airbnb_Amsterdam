@@ -19,15 +19,23 @@
 - **Version Control**: Git + clean structure
 
 ## Project Structure
-├── data/raw/                  # Raw .gz files
-├── src/                       # ETL + training
+├── data/raw/
+|
+├── src/                       
 │   ├── extract.py
+|
 │   ├── transform.py
+|
 │   ├── load_to_bigquery.py
+|
 │   └── train_price_model.py
-├── model/price_model.pkl      # Trained ML model
+|
+├── model/price_model.pkl      
+|
 ├── dashboard/
-│   └── app.py + pages/        # Stunning multi-page UI
+|
+│   └── app.py + pages/        
+|
 └── requirements.txt
 
 
