@@ -17,7 +17,8 @@
 - **ML**: Scikit-learn Random Forest (R² ≈ 0.73)
 - **Dashboard**: Streamlit multi-page + Plotly + Custom CSS
 - **Version Control**: Git + clean structure
-- 
+
+```
 project/
 ├── data/
 │   └── raw/
@@ -31,10 +32,8 @@ project/
 ├── dashboard/
 │   ├── app.py
 │   └── pages/
-├── requirements.txt
-
-
-
+└── requirements.txt
+```
 
 ## Architecture (1 sentence)
 Raw Airbnb CSVs → Python ETL → Google BigQuery → Train ML model → Multi-page Streamlit dashboard with live predictions
