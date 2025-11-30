@@ -17,26 +17,22 @@
 - **ML**: Scikit-learn Random Forest (R² ≈ 0.73)
 - **Dashboard**: Streamlit multi-page + Plotly + Custom CSS
 - **Version Control**: Git + clean structure
-
-## Project Structure
-├── data/raw/
-|
-├── src/                       
+- 
+project/
+├── data/
+│   └── raw/
+├── src/
 │   ├── extract.py
-|
 │   ├── transform.py
-|
 │   ├── load_to_bigquery.py
-|
 │   └── train_price_model.py
-|
-├── model/price_model.pkl      
-|
+├── model/
+│   └── price_model.pkl
 ├── dashboard/
-|
-│   └── app.py + pages/        
-|
-└── requirements.txt
+│   ├── app.py
+│   └── pages/
+├── requirements.txt
+
 
 
 
